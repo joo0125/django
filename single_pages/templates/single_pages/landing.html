@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Do It Project</title>
+
+    <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'single_pages/css/landing.css' %}" media="screen">
+    <script src="https://kit.fontawesome.com/f5a79de3b2.js" crossorigin="anonymous"></script>
+            <!--pont-->
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inspiration&family=Palette+Mosaic&family=Passions+Conflict&family=Rock+3D&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inspiration&family=Palette+Mosaic&family=Passions+Conflict&display=swap" rel="stylesheet">
+</head>
+<body>
+
+{% include 'blog/navbar.html' %}
+
+<section>
+    <style>h1,h2,h10{font-family: 'Anton', sans-serif; font-height:100;}</style>
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-6 text-light">
+                <h1 class="mt-5">Do It Project</h1>
+                <p>부산대학교 K-Digital Training 개인 웹사이트 만들기.</p>
+            </div>
+
+            <div class="col-lg-5 mt-5">
+                <h2 class="text-light">Blog - Recent posts</h2>
+                {% for post in recent_posts %}
+                    <div class="card mt-1">
+                        <div class="card-body">
+                            <h6><a href="{{ post.get_absolute_url }}" class="text-decoration-none text-dark">{{ post.title }}</a></h6>
+                            <span class="badge badge-pill badge-light float-right">
+                                <img class="mr-1 rounded-circle" width="20px" src="{{ post.get_avatar_url }}" alt="{{ post.author }}">
+                                {{ post.author.username }}
+                                &nbsp;
+                                &nbsp;
+                                {{ post.created_at }}
+                           </span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="fixed-bottom">
+    {% include 'blog/footer.html' %}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

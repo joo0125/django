@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{% block head_title %}Blog Home{% endblock %}</title>
+        <!-- Favicon-->
+        <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
+        <script src="https://kit.fontawesome.com/f5a79de3b2.js" crossorigin="anonymous"></script>
+        <!--pont-->
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inspiration&family=Palette+Mosaic&family=Passions+Conflict&family=Rock+3D&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inspiration&family=Palette+Mosaic&family=Passions+Conflict&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    <style>h1,h2,h10{font-family: 'Anton', sans-serif; font-height:100;}</style>
+
+        {% include 'blog/navbar.html' %}
+        <!-- Page header with logo and tagline-->
+        <header class="py-5 bg-light border-bottom mb-4">
+            <div class="container">
+                <div class="text-center my-2">
+                    <h1 class="fw-bolder">Welcome to Blog Home!</h1>
+                    <p class="lead mb-0">우리의 일상을 공유해 보아요.</p>
+                </div>
+            </div>
+        </header>
+        <!-- Page content-->
+        <div class="container">
+            <div class="row">
+                <!-- Blog entries-->
+                <div class="col-lg-9">
+                    {% block main_area %}
+                    {% endblock %}
+
+                </div>
+                <!-- Side widgets-->
+                <div class="col-lg-3">
+                    <!-- Search widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">Search</div>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <input class="form-control" type="text" placeholder="Enter search term..." id="search-input">
+                                <button class="btn btn-primary" type="button" onclick="searchPost();">Go!</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Categories widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">Categories</div>
+                        <div class="card-body">
+                            <div class="row">
+
+                                    <ul>
+                                        {% for category in categories %}
+                                        <li><a href="{{ category.get_absolute_url }}">{{ category }} ({{ category.post_set.count }})</a></li>
+                                        {% endfor %}
+                                        <li><a href="/blog/category/no_category/">미분류 ({{ no_category_post_count }})</a></li>
+
+                                    </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<script>
+    function searchPost(){
+        let searchValue = document.getElementById('search-input').value.trim();
+        if (searchValue.length > 1){
+            location.href="/blog/search/" + searchValue + "/";
+        }
+        else{
+            alert('검색어('+ searchValue +')가 너무 짧습니다.');
+        }
+    };
+
+    document.getElementById('search-input').addEventListener('keyup', function(event){
+        if(event.key === 'Enter'){
+            searchPost();
+        }
+    });
+</script>
+        {% include 'blog/footer.html' %}
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    </body>
+</html>

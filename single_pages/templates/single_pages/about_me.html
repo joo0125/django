@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>About 종은</title>
+
+    <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'single_pages/css/about_me.css' %}" media="screen">
+    <script src="https://kit.fontawesome.com/f5a79de3b2.js" crossorigin="anonymous"></script>
+                <!--pont-->
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inspiration&family=Palette+Mosaic&family=Passions+Conflict&family=Rock+3D&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inspiration&family=Palette+Mosaic&family=Passions+Conflict&display=swap" rel="stylesheet">
+</head>
+<body>
+
+{% include 'blog/navbar.html' %}
+
+<section>
+    <style>h1,h2,h10{font-family: 'Anton', sans-serif; font-height:100;}</style>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1>안녕하세요 구종은입니다.</h1>
+                <br/>
+                <p class="lead">
+                    음악과 컴퓨터와 영화를 좋아합니다.<br/>
+                    취업을 위해 노력하고 있고, 자유시간은 게임을 하거나 미디어 시청을하며 지냅니다.
+                </p>
+
+                    <li>ABOUT ME</li>
+                    <ul>
+                        <li>2000.01.25 출생</li>
+                        <li>2018.02.24 전기전자과 입학 /li>
+                        <li>2022.02.24 대학졸업</li>
+                    </ul>
+                    <li>PROJECT EXPERIENCE</li>
+                    <ul>
+                        <li>디지털시계제작 (2019.09.03 ~ 2019.12.20)</li>
+                        <li>공기청정기쓰레기통 (2020.09.03 ~ 2020.12.01)</li>
+                        <li>보행자쉼터 (2021.03.03 ~ 2021.6.30)</li>
+                    </ul>
+                    <li>MBTI</li>
+                    <ul>
+                        <li>ISTP</li>
+                    </ul>
+                </ul>
+
+            </div>
+            <div class="col-lg-4">
+                <img class="img-fluid" src="{% static 'single_pages/images/KakaoTalk_20220329_135446420_04.jpg' %}">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light margin-for-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>PORTFOLIO</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card" data-toggle="modal" data-target="#digital">
+                    <img class="card-img-top" src="{% static 'single_pages/images/p1.png' %}">
+                    <div class="card-body">
+                        <h5 class="card-title">디지털시계 제작하기</h5>
+                        <p>디지털시계 동작영상입니다.</p>
+                        <p>2019.09.03 ~ 2019.12.20</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card" data-toggle="modal" data-target="#trash">
+                    <img class="card-img-top" src="{% static 'single_pages/images/p2.png' %}" height="150">
+                    <div class="card-body">
+                        <h5 class="card-title">공기청정기쓰레기통 제작하기</h5>
+                        <p>공기청정기쓰레기통 제작영상입니다.</p>
+                        <p>2020.09.03 ~ 2020.12.01</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card" data-toggle="modal" data-target="#rest_area">
+                    <img class="card-img-top" src="{% static 'single_pages/images/p3.png' %}" height="150">
+                    <div class="card-body">
+                        <h5 class="card-title">보행자쉼터 제작하기</h5>
+                        <p>보행자쉼터 제작영상입니다.</p>
+                        <p>2021.03.03 ~ 2021.06.30</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="digital" tabindex="-1" role="dialog" aria-labelledby="digitalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="digitalModalLabel">디지털시계 제작하기</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-7">
+                         <video autoplay muted loop class="active, img-fluid" src="{% static 'single_pages/images/KakaoTalk_20220329_151343375.mp4' %}" controls width="760"></video>
+
+                    </div>
+                    <div class="col-lg-5">
+                        <p>디지털시계제작</p>
+                        <p>1.IC회로와 세그먼트를 연결한 회로도를 만들어 납땜해줍니다.</p>
+                        <p>2. 멜로디IC와 스피커를연결한 알람기능회로도 만들어 납땜해줍니다.</p>
+                        <p>3. 두 판을 연결하면 정해진시간에 알람이 울리는 디지털시계가 완성됩니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="trash" tabindex="-1" role="dialog" aria-labelledby="trashModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id=" trashModalLabel">공기청정기쓰레기통 제작하기</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <video controls="controls" autoplay muted playsinline class="active img-fluid" src="{% static 'single_pages/images/KakaoTalk_20220329_162352961.mp4' %}"></video>
+                    </div>
+                    <div class="col-lg-5">
+                        <p>공기청정쓰레기통 제작</p>
+                        <p>1. 쓰레기통에 구멍을 뚫어 공기가 정화될 수 있도록 만들어 준다.</p>
+                        <p>2. 구멍을 뚫은 쓰레기통에 공기청정필터를 넣고 맨위부분은 팬을 부착해준다.</p>
+                        <p>3. 미세먼지감지센서를 부착하여 미세먼지농도에따라 LED색을 조정하도록 코딩해준다.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="rest_area" tabindex="-1" role="dialog" aria-labelledby="rest_areaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id=" rest_areaModalLabel">보행자쉼터 제작하기</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <video controls="controls" autoplay muted playsinline class="img-fluid" src="{% static 'single_pages/images/KakaoTalk_20220329_165237385.mp4' %}"></video>
+                    </div>
+                    <div class="col-lg-5">
+                        <p>보행자쉼터 제작.</p>
+                        <p>1.사용할 센서들을 정리하고 테스트를 해줍니다.</p>
+                        <p>2.센서들이 들어갈 수 있게 구멍을 낸 설계도를 토대로 캐드작업을하여 3D프린팅하여 외형을 제작합니다.</p>
+                        <p>3.센서들과 외형을 연결하여 배터리로 전원을 주며 작동이 안되는부분을 체크합니다.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="fixed-bottom">
+    {% include 'blog/footer.html' %}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
